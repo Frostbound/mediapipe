@@ -1,0 +1,3 @@
+[submodule "mediapipe/mocap-mediapipe"]
+	path = mediapipe/mocap-mediapipe
+	url = https://github.com/Frostbound/mocap-mediapipe.git
