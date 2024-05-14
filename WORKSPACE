@@ -370,7 +370,7 @@ http_archive(
 new_local_repository(
     name = "linux_opencv",
     build_file = "@//third_party:opencv_linux.BUILD",
-    path = "/usr",
+    path = "../../bazel-bin/external/opencv/opencv/",
 )
 
 new_local_repository(
@@ -379,13 +379,18 @@ new_local_repository(
     path = "/usr"
 )
 
+local_repository(
+    name = "mocap-mediapipe",
+    path = "../mocap-mediapipe",
+)
+
 new_local_repository(
     name = "macos_opencv",
     build_file = "@//third_party:opencv_macos.BUILD",
     # For local MacOS builds, the path should point to an opencv@3 installation.
     # If you edit the path here, you will also need to update the corresponding
     # prefix in "opencv_macos.BUILD".
-    path = "/usr/local",  # e.g. /usr/local/Cellar for HomeBrew
+    path = "../../bazel-bin/external/opencv/opencv/",  # e.g. /usr/local/Cellar for HomeBrew
 )
 
 new_local_repository(
@@ -397,7 +402,7 @@ new_local_repository(
 new_local_repository(
     name = "windows_opencv",
     build_file = "@//third_party:opencv_windows.BUILD",
-    path = "C:\\opencv\\build",
+    path = "../../bazel-bin/external/opencv/opencv/",
 )
 
 http_archive(
