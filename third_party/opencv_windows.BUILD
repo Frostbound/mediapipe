@@ -38,11 +38,11 @@ cc_library(
     name = "opencv",
     srcs = select({
         ":opt_build": 
-            [ "x64/vc17/lib/opencv_%s%s.lib" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ] +
-            [ "x64/vc17/lib/opencv_%s%s.dll" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ], 
+            [ "lib/opencv_%s%s.lib" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ] +
+            [ "lib/opencv_%s%s.dll" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ], 
         ":dbg_build": 
-            [ "x64/vc17/lib/opencv_%s%sd.lib" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ] +
-            [ "x64/vc17/lib/opencv_%s%sd.dll" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ], 
+            [ "lib/opencv_%s%sd.lib" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ] +
+            [ "lib/opencv_%s%sd.dll" % (module, OPENCV_VERSION) for module in OPENCV_MODULES ], 
     }),
     hdrs = glob(["include/opencv2/**/*.h*"]),
     includes = ["include/"],
